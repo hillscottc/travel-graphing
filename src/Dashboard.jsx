@@ -5,7 +5,7 @@ const proxyUrl = 'https://fathomless-chamber-37370.herokuapp.com/'
 const dataUrl =
   'https://arrivalist-puzzles.s3.amazonaws.com/national_travel.json'
 
-export default function GraphComponent() {
+export default function Dashboard() {
   const [data, setData] = useState({})
   useEffect(() => {
     fetch(proxyUrl + dataUrl)
