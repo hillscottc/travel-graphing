@@ -1,6 +1,6 @@
 import React from 'react'
 
-function getGraphDataTemplate(legendLabel = '') {
+export function getGraphDataTemplate(legendLabel = '') {
   return {
     labels: [],
     datasets: [
@@ -28,3 +28,7 @@ export const getByState = ({ travelData, state }) => {
   graphData.datasets[0].data = byState.map((x) => x['trip_count'])
   return graphData
 }
+// {
+//   "presets": [["@babel/preset-env", { "targets": { "node": "current" }}], "@babel/preset-react"],
+//   "plugins": ["@babel/plugin-proposal-class-properties", "@babel/plugin-transform-runtime"]
+// }
