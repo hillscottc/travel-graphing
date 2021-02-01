@@ -18,7 +18,7 @@ const graphData = {
   ],
 }
 
-export default function SampleGraph() {
+export default function Rainfall() {
   return (
     <div>
       <Line

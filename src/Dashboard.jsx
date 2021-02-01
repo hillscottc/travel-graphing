@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Line } from 'react-chartjs-2'
-import { getByState } from './travelDataParser'
+import { parseStateData } from './travelDataParser'
 
 // I have to use my own cors proxy here, because the dataUrl doesn't have 'Access-Control-Allow-Origin'
 const proxyUrl = 'https://fathomless-chamber-37370.herokuapp.com/'
@@ -20,7 +20,9 @@ export default function Dashboard() {
 
   const testState = 'AK'
 
-  const lineGraphData = getByState({ travelData, state: testState })
+  const lineGraphData = parseStateData({ travelData, state: testState })
+
+  console.log('lineGraphData:', lineGraphData)
 
   return (
     <main>
@@ -61,6 +63,13 @@ export default function Dashboard() {
       <section>
         Fetched data: bystate:
         <div>All travelData length: {travelData.length}</div>
+        raw data for AL: {/*<pre>*/}
+        {/*  {JSON.stringify(*/}
+        {/*    getRawDataByState({ travelData, state: 'AL' }),*/}
+        {/*    null,*/}
+        {/*    2*/}
+        {/*  )}*/}
+        {/*</pre>*/}
         {/*<pre>{JSON.stringify(travelData, null, 2)}</pre>*/}
       </section>
     </main>
