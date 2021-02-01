@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Line } from 'react-chartjs-2'
 import { parseStateData } from './travelDataParser'
+import * as util from './util'
 
 // I have to use my own cors proxy here, because the dataUrl doesn't have 'Access-Control-Allow-Origin'
 const proxyUrl = 'https://fathomless-chamber-37370.herokuapp.com/'
@@ -9,6 +10,8 @@ const dataUrl =
 
 export default function Dashboard() {
   const [travelData, setTravelData] = useState({})
+  const [travelState, setTravelState] = useState('')
+
   useEffect(() => {
     fetch(proxyUrl + dataUrl)
       .then((response) => response.json())
@@ -18,9 +21,7 @@ export default function Dashboard() {
       })
   }, [])
 
-  const testState = 'AK'
-
-  const lineGraphData = parseStateData({ travelData, state: testState })
+  const lineGraphData = parseStateData({ travelData, state: travelState })
 
   console.log('lineGraphData:', lineGraphData)
 
@@ -44,12 +45,25 @@ export default function Dashboard() {
       <br />
 
       <section>
+        <label>State:</label>&nbsp;
+        <select onChange={(e) => setTravelState(e.target.value)}>
+          <option value=''> Select state </option>
+          {util.states.map((st) => (
+            <option key={st} value={st}>
+              {st}
+            </option>
+          ))}
+        </select>
+        <div>selection is {travelState}</div>
+      </section>
+
+      <section>
         <Line
           data={lineGraphData}
           options={{
             title: {
               display: true,
-              text: 'Trips per day for ' + testState,
+              text: 'Trips per day for ' + travelState,
               fontSize: 20,
             },
             legend: {
@@ -61,15 +75,14 @@ export default function Dashboard() {
       </section>
 
       <section>
-        Fetched data: bystate:
-        <div>All travelData length: {travelData.length}</div>
-        raw data for AL: {/*<pre>*/}
-        {/*  {JSON.stringify(*/}
-        {/*    getRawDataByState({ travelData, state: 'AL' }),*/}
-        {/*    null,*/}
-        {/*    2*/}
-        {/*  )}*/}
-        {/*</pre>*/}
+        Fetched data for: {travelState}
+        <pre>
+          {JSON.stringify(
+            parseStateData({ travelData, state: travelState }),
+            null,
+            2
+          )}
+        </pre>
         {/*<pre>{JSON.stringify(travelData, null, 2)}</pre>*/}
       </section>
     </main>

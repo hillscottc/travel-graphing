@@ -42,16 +42,17 @@ describe('travelDataParser', () => {
     const results = concatStateDays({ travelData, state: 'AK' })
     const expected = [
       {
-        trip_date: '2019-12-08T08:00:00.000Z',
+        trip_date: '12/08/2019',
         home_state: 'AK',
         trip_count: 4,
       },
       {
-        trip_date: '2020-12-08T08:00:00.000Z',
+        trip_date: '12/08/2020',
         home_state: 'AK',
         trip_count: 10,
       },
     ]
+
     expect(results).toEqual(expected)
   })
 
@@ -60,7 +61,7 @@ describe('travelDataParser', () => {
 
     const results = parseStateData({ travelData, state: 'AK' })
     const expected = {
-      labels: ['2019-12-08T08:00:00.000Z', '2020-12-08T08:00:00.000Z'],
+      labels: ['12/08/2019', '12/08/2020'],
       datasets: [
         {
           label: 'AK',

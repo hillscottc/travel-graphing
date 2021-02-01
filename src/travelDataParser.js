@@ -1,4 +1,5 @@
 import React from 'react'
+import moment from 'moment'
 
 export const getRawDataByState = ({ travelData, state }) => {
   return travelData.filter((x) => x['home_state'] === state)
@@ -9,23 +10,26 @@ export const concatStateDays = ({ travelData, state }) => {
   if (!travelData || Object.keys(travelData).length === 0) return {}
 
   let foundDays = []
-  let fixedData = []
+  let results = []
 
   for (let i = 0; i < travelData.length; i++) {
     if (travelData[i]['home_state'] !== state) continue
-    if (!foundDays.includes(travelData[i]['trip_date'])) {
-      foundDays.push(travelData[i]['trip_date'])
-      fixedData.push(travelData[i])
+    const tripDate = moment(travelData[i]['trip_date']).format('MM/DD/YYYY')
+
+    if (!foundDays.includes(tripDate)) {
+      foundDays.push(tripDate)
+      travelData[i]['trip_date'] = tripDate
+      results.push(travelData[i])
     } else {
-      for (let j = 0; j < fixedData.length; j++) {
-        if (fixedData[j]['trip_date'] === travelData[i]['trip_date']) {
-          fixedData[j]['trip_count'] += travelData[i]['trip_count']
+      for (let j = 0; j < results.length; j++) {
+        if (results[j]['trip_date'] === tripDate) {
+          results[j]['trip_count'] += travelData[i]['trip_count']
           break
         }
       }
     }
   }
-  return fixedData
+  return results
 }
 
 export function getGraphDataTemplate(legendLabel = '') {
