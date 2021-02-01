@@ -2076,6 +2076,14 @@
     "babel-plugin-jest-hoist" "^26.6.2"
     "babel-preset-current-node-syntax" "^1.0.0"
 
+"babel-runtime@^6.26.0":
+  "integrity" "sha1-llxwWGaOgrVde/4E/yM3vItWR/4="
+  "resolved" "https://nexus-assetmgmt-platform-cicd.us-west-2.ocp.studio.disney.com/repository/npm/babel-runtime/-/babel-runtime-6.26.0.tgz"
+  "version" "6.26.0"
+  dependencies:
+    "core-js" "^2.4.0"
+    "regenerator-runtime" "^0.11.0"
+
 "balanced-match@^1.0.0":
   "integrity" "sha1-ibTRmasr7kneFk6gK4nORi1xt2c="
   "resolved" "https://nexus-assetmgmt-platform-cicd.us-west-2.ocp.studio.disney.com/repository/npm/balanced-match/-/balanced-match-1.0.0.tgz"
@@ -2768,6 +2776,11 @@
   dependencies:
     "browserslist" "^4.15.0"
     "semver" "7.0.0"
+
+"core-js@^2.4.0":
+  "integrity" "sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ=="
+  "resolved" "https://nexus-assetmgmt-platform-cicd.us-west-2.ocp.studio.disney.com/repository/npm/core-js/-/core-js-2.6.12.tgz"
+  "version" "2.6.12"
 
 "core-util-is@~1.0.0", "core-util-is@1.0.2":
   "integrity" "sha1-tf1UIgqivFq1eqtxQMlAdUUDwac="
@@ -7585,7 +7598,7 @@
     "lodash" "^4.17.19"
     "prop-types" "^15.7.2"
 
-"react-dom@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react-dom@^17.0.1":
+"react-dom@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react-dom@^16.13.1", "react-dom@^17.0.1":
   "integrity" "sha512-6eV150oJZ9U2t9svnsspTMrWNyHc6chX0KzDeAOXftRa8bNeOKTTfCJ7KorIwenkHd2xqVTBTCZd79yk/lx/Ug=="
   "resolved" "https://nexus-assetmgmt-platform-cicd.us-west-2.ocp.studio.disney.com/repository/npm/react-dom/-/react-dom-17.0.1.tgz"
   "version" "17.0.1"
@@ -7609,7 +7622,14 @@
   "resolved" "https://nexus-assetmgmt-platform-cicd.us-west-2.ocp.studio.disney.com/repository/npm/react-refresh/-/react-refresh-0.9.0.tgz"
   "version" "0.9.0"
 
-"react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^17.0.1", "react@17.0.1":
+"react-usa-map@^1.5.0":
+  "integrity" "sha512-Czs74kGMi3vWr4/alTQc34I5+PdCTIzmbfKJyxPE1eW9VfdC5jfkgr1LpCEHhtFxO03e3Z9+P7s6BT/ps4UNIA=="
+  "resolved" "https://nexus-assetmgmt-platform-cicd.us-west-2.ocp.studio.disney.com/repository/npm/react-usa-map/-/react-usa-map-1.5.0.tgz"
+  "version" "1.5.0"
+  dependencies:
+    "babel-runtime" "^6.26.0"
+
+"react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^16.13.1", "react@^17.0.1", "react@17.0.1":
   "integrity" "sha512-lG9c9UuMHdcAexXtigOZLX8exLWkW0Ku29qPRU8uhF2R9BN96dLCt0psvzPLlHc5OWkgymP3qwTRgbnw5BKx3w=="
   "resolved" "https://nexus-assetmgmt-platform-cicd.us-west-2.ocp.studio.disney.com/repository/npm/react/-/react-17.0.1.tgz"
   "version" "17.0.1"
@@ -7751,6 +7771,11 @@
   "integrity" "sha512-j2+C8+NtXQgEKWk49MMP5P/u2GhnahTtVkRIHr5R5lVRlbKvmQ+oS+A5aLKWp2ma5VkT8sh6v+v4hbH0YHR66A=="
   "resolved" "https://nexus-assetmgmt-platform-cicd.us-west-2.ocp.studio.disney.com/repository/npm/regenerate/-/regenerate-1.4.1.tgz"
   "version" "1.4.1"
+
+"regenerator-runtime@^0.11.0":
+  "integrity" "sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg=="
+  "resolved" "https://nexus-assetmgmt-platform-cicd.us-west-2.ocp.studio.disney.com/repository/npm/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz"
+  "version" "0.11.1"
 
 "regenerator-runtime@^0.13.4":
   "integrity" "sha512-a54FxoJDIr27pgf7IgeQGxmqUNYrcV338lf/6gH456HZ/PhX+5BcwHXG9ajESmwe6WRO0tAzRUrRmNONWgkrew=="
